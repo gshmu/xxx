@@ -20,6 +20,6 @@ from . import views
 
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index),
-    url(r'^M500/(?P<name>\w+)/(?P<phone>\d+)', views.M500),
+    url(r'^(?i)w/$', views.index),
+    url(r'^(?i)w/500M/(?P<name>\w+)/(?P<phone>\d+)', views.M500),
 ]

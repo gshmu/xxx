@@ -22,8 +22,8 @@ def M500(request, name, phone):
         'format': "script",
         'callback': 'surveycallback'
     }
-    # response = requests.post(url, data=data)
-    # if response.status_code == 200:
-    #     return HttpResponse("It's  OK...<br><br> Response: %s" % response.text)
+    response = requests.post(url, data=data)
+    if response.status_code == 200:
+        return HttpResponse("It's  OK...<br><br> Response: %s" % response.text)
 
     return HttpResponse("ERROR!!!<br><br>  name: %s<br>  phone: %s" % (name, phone))
