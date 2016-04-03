@@ -22,7 +22,7 @@ def M500(request, name, phone):
         'format': "script",
         'callback': 'surveycallback'
     }
-    response = requests.post(url, data=data)
+    response = requests.post(url, data=data, timeout=180)
     if response.status_code == 200:
         return HttpResponse("It's  OK...<br><br> Response: %s" % response.text)
 
