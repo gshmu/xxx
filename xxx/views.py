@@ -9,7 +9,7 @@ __author__ = 'gshmu'
 
 def index(request):
 
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return HttpResponse("500M free data at: /w/500M/name/phone_number/<br/><br/>replace your name and number, Good Luck!")
 
 
 def M500(request, name, phone):
