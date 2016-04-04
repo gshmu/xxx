@@ -1,0 +1,6 @@
+*~
+.idea
+*.pyc
+*.swp
+i386.*
+update.sh
