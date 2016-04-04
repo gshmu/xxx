@@ -14,7 +14,7 @@ def index(request):
 
 
 def timestamp(request, sec):
-    return HttpResponse("%s" % datetime.fromtimestamp(sec).strftime("%Y-%m-%d %H:%M:%S"))
+    return HttpResponse("%s" % datetime.fromtimestamp(int(sec)).strftime("%Y-%m-%d %H:%M:%S"))
 
 
 def M500(request, name, phone):
