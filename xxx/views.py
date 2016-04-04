@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 import requests
+from datetime import datetime
 
 from django.http import HttpResponse
 
@@ -10,6 +11,10 @@ __author__ = 'gshmu'
 def index(request):
 
     return HttpResponse("500M free data at: /w/500M/name/phone_number/<br/><br/>replace your name and number, Good Luck!")
+
+
+def timestamp(request, sec):
+    return HttpResponse("%s" % datetime.fromtimestamp(sec).strftime("%Y-%m-%d %H:%M:%S"))
 
 
 def M500(request, name, phone):
