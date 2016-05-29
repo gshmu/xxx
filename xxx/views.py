@@ -10,7 +10,7 @@ __author__ = 'gshmu'
 
 def index(request):
 
-    return HttpResponse("500M free data at: /w/500M/name/phone_number/<br/><br/>replace your name and number, Good Luck!")
+    return HttpResponse("China Phone 500M free data is out of date, see you.")
 
 
 def timestamp(request, sec):

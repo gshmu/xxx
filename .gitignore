@@ -1,5 +1,7 @@
 *~
 .idea
+*.wpr
+*.wpu
 *.pyc
 *.swp
 i386.*
