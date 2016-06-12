@@ -18,7 +18,7 @@ def timestamp(request, sec):
 
 
 def ip_addr(request):
-    return HttpResponse("%s" % request.META.get('REMOTE_ADDR'))
+    return HttpResponse("%s" % request.META.get('HTTP_X_FORWARDED_FOR') or request.META.get('REMOTE_ADDR'))
 
 
 def M500(request, name, phone):
