@@ -17,6 +17,10 @@ def timestamp(request, sec):
     return HttpResponse("%s" % datetime.fromtimestamp(int(sec)).strftime("%Y-%m-%d %H:%M:%S"))
 
 
+def ip_addr(request):
+    return HttpResponse("%s" % request.META.get('REMOTE_ADDR'))
+
+
 def M500(request, name, phone):
 
     url = 'http://appapns.www.gov.cn/govdata/survey.shtml'
