@@ -44,7 +44,8 @@ def M500(request, name, phone):
         'xlh': json.loads(requests.post(_a, data=xlh, timeout=180).text)["message"]
     }
     response = requests.post(url, data=data, timeout=180)
+    return HttpResponse("Learn to control your desire, to respect your power, and to regard the authority you have.")
     if json.loads(response.text)["code"] == 1:
         return HttpResponse("Only ShaanXi.<br>It's  OK...<br><br> Response: %s" % response.text)
 
-    return HttpResponse("ERROR!!!<br><br>  name: %s<br>  phone: %s" % (name, phone))
+    return HttpResponse("ERROR!!!<br><br>  name: %s<br>  phone: %s<br><br>%s" % (name, phone, response.text))
