@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
+import json
 import requests
 from datetime import datetime
 
@@ -22,17 +23,28 @@ def ip_addr(request):
 
 
 def M500(request, name, phone):
+    # 国务院
+    # url = 'http://appapns.www.gov.cn/govdata/survey.shtml'
+    # data = {
+    #     'answer': "{}",
+    #     'name': name,
+    #     'phone': phone,
+    #     'format': "script",
+    #     'callback': 'surveycallback'
+    # }
+    # response = requests.post(url, data=data, timeout=180)
+    # 陕西省
+    _a = 'http://dt.shxca.gov.cn/checkAnswer.php'
+    xlh = {'data': '[{"id":258,"answer":1}]'}
 
-    url = 'http://appapns.www.gov.cn/govdata/survey.shtml'
+    url = 'http://dt.shxca.gov.cn/getFlows.php'
     data = {
-        'answer': "{}",
         'name': name,
         'phone': phone,
-        'format': "script",
-        'callback': 'surveycallback'
+        'xlh': json.loads(requests.post(_a, data=xlh, timeout=180))["message"]
     }
     response = requests.post(url, data=data, timeout=180)
-    if response.status_code == 200:
-        return HttpResponse("It's  OK...<br><br> Response: %s" % response.text)
+    if json.loads(response.text)["code"] == 1:
+        return HttpResponse("Only ShaanXi.<br>It's  OK...<br><br> Response: %s" % response.text)
 
     return HttpResponse("ERROR!!!<br><br>  name: %s<br>  phone: %s" % (name, phone))
