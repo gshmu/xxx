@@ -41,7 +41,7 @@ def M500(request, name, phone):
     data = {
         'name': name,
         'phone': phone,
-        'xlh': json.loads(requests.post(_a, data=xlh, timeout=180))["message"]
+        'xlh': json.loads(requests.post(_a, data=xlh, timeout=180).text)["message"]
     }
     response = requests.post(url, data=data, timeout=180)
     if json.loads(response.text)["code"] == 1:
