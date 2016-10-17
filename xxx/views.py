@@ -49,3 +49,9 @@ def M500(request, name, phone):
         return HttpResponse("Only ShaanXi.<br>It's  OK...<br><br> Response: %s" % response.text)
 
     return HttpResponse("ERROR!!!<br><br>  name: %s<br>  phone: %s<br><br>%s" % (name, phone, response.text))
+
+
+def random_20x(request):
+    now = datetime.now().time()
+    code = 200 + (now.hour + now.minute / 20) % 2
+    return HttpResponse(status=code)
