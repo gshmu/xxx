@@ -11,7 +11,8 @@ __author__ = 'gshmu'
 
 def index(request):
 
-    return HttpResponse("Shaanxi 500M. <br>/w/500M/name/phone_number/<br/><br/>replace your name and number, Good Luck!")
+    # return HttpResponse("Shaanxi 500M. <br>/w/500M/name/phone_number/<br/><br/>replace your name and number, Good Luck!")
+    return HttpResponse("API Pro")
 
 
 def timestamp(request, sec):
