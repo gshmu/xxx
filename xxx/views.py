@@ -54,5 +54,5 @@ def M500(request, name, phone):
 
 def random_20x(request):
     now = datetime.now().time()
-    code = 200 + (now.hour + now.minute / 20) % 2
+    code = 200 if (now.hour + now.minute / 20) % 2 == 0 else 451
     return HttpResponse(status=code)
