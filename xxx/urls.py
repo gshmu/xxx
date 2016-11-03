@@ -20,7 +20,7 @@ from . import views
 
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index),
+    url(r'^$', views.ip_addr),
     url(r'^(?P<sec>-?\d+)/?$', views.timestamp),
     url(r'^(?i)ip/?$', views.ip_addr),
     url(r'^(?i)500M/(?P<name>\w+)/(?P<phone>\d+)/?', views.M500),
