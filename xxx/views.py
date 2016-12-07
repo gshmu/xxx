@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 import json
+import time
 import requests
 from datetime import datetime
 
@@ -21,6 +22,10 @@ def timestamp(request, sec):
 
 def ip_addr(request):
     return HttpResponse("%s" % request.META.get('HTTP_X_FORWARDED_FOR') or request.META.get('REMOTE_ADDR'))
+
+
+def null(request):
+    return HttpResponse(status=444)
 
 
 def M500(request, name, phone):
@@ -46,10 +51,10 @@ def M500(request, name, phone):
     }
     response = requests.post(url, data=data, timeout=180)
     return HttpResponse("Learn to control your desire, to respect your power, and to regard the authority you have.")
-    if json.loads(response.text)["code"] == 1:
-        return HttpResponse("Only ShaanXi.<br>It's  OK...<br><br> Response: %s" % response.text)
-
-    return HttpResponse("ERROR!!!<br><br>  name: %s<br>  phone: %s<br><br>%s" % (name, phone, response.text))
+    # if json.loads(response.text)["code"] == 1:
+    #     return HttpResponse("Only ShaanXi.<br>It's  OK...<br><br> Response: %s" % response.text)
+    #
+    # return HttpResponse("ERROR!!!<br><br>  name: %s<br>  phone: %s<br><br>%s" % (name, phone, response.text))
 
 
 def random_20x(request):
