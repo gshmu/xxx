@@ -25,8 +25,16 @@ def ip_addr(request):
 
 
 def time504(request):
-    requests.get('http://vps.gshmu.tk/', timeout=29)
-    return HttpResponse("requests.get(self.server)")
+    try:
+        requests.get('http://vps.gshmu.tk/', timeout=20)
+    except requests.exceptions.Timeout:
+        return HttpResponse("requests.get(self.server) Timeout")
+    return HttpResponse("requests.get(self.server) nginx worker 2")
+
+
+def sleep(request):
+    time.sleep(3)
+    return HttpResponse("sleep 3 sec")
 
 
 def M500(request, name, phone):
