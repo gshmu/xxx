@@ -24,6 +24,11 @@ def ip_addr(request):
     return HttpResponse("%s" % request.META.get('HTTP_X_FORWARDED_FOR') or request.META.get('REMOTE_ADDR'))
 
 
+def time504(request):
+    requests.get('http://vps.gshmu.tk/', timeout=29)
+    return HttpResponse("requests.get(self.server)")
+
+
 def M500(request, name, phone):
     # 国务院
     # url = 'http://appapns.www.gov.cn/govdata/survey.shtml'

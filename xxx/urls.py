@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^(?i)ip/?$', views.ip_addr),
     url(r'^(?i)500M/(?P<name>\w+)/(?P<phone>\d+)/?', views.M500),
     url(r'^md5/hash/random/20x', views.random_20x),
+    url(r'^time504', views.time504),
 ]
