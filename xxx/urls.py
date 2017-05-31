@@ -27,4 +27,5 @@ urlpatterns = [
     url(r'^md5/hash/random/20x', views.random_20x),
     url(r'^time504', views.time504),
     url(r'^sleep', views.sleep),
+    url(r'^put', views.put),
 ]

@@ -37,6 +37,12 @@ def sleep(request):
     return HttpResponse("sleep 3 sec")
 
 
+def put(request):
+    print('aab')
+    print(request.files)
+    return HttpResponse(request.body)
+
+
 def M500(request, name, phone):
     # 国务院
     # url = 'http://appapns.www.gov.cn/govdata/survey.shtml'
